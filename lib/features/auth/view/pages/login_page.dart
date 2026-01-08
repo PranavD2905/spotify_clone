@@ -3,15 +3,14 @@ import 'package:spotify_clone/core/theme/app_pallete.dart';
 import 'package:spotify_clone/features/auth/view/widgets/auth_gradient_button.dart';
 import 'package:spotify_clone/features/auth/view/widgets/custom_field.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
-  final nameController = TextEditingController();
+class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
@@ -19,7 +18,6 @@ class _SignupPageState extends State<SignupPage> {
   @override
   void dispose() {
     // TODO: implement dispose
-    nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
@@ -42,8 +40,6 @@ class _SignupPageState extends State<SignupPage> {
                 style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 30),
-              CustomField(hintText: 'Name', controller: nameController),
-              const SizedBox(height: 15),
 
               CustomField(hintText: 'Email', controller: emailController),
               const SizedBox(height: 15),
@@ -55,12 +51,12 @@ class _SignupPageState extends State<SignupPage> {
               ),
               const SizedBox(height: 15),
 
-              AuthGradientButton(buttonText: "Sign Up"),
+              AuthGradientButton(buttonText: "Sign In"),
               const SizedBox(height: 20),
 
               RichText(
                 text: TextSpan(
-                  text: "Already have an Account? ",
+                  text: "Don't have an Account? ",
                   style: Theme.of(context).textTheme.titleMedium,
                   children: const [
                     TextSpan(
